@@ -10,5 +10,18 @@ class HomeActivity : AppCompatActivity()  {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        val fragmentMovie = MovieFragment()
+        val fragment = supportFragmentManager.findFragmentByTag(MovieFragment::class.java.simpleName)
+
+        if(fragment !is MovieFragment){
+            supportFragmentManager.beginTransaction()
+                .add(R.id.home_layout, fragmentMovie, MovieFragment::class.java.simpleName)
+                .commit()
+        }
+
+//        supportFragmentManager.beginTransaction()
+//                .add(R.id.fragment_movie, MovieFragment())
+//                .commit()
+
     }
 }
