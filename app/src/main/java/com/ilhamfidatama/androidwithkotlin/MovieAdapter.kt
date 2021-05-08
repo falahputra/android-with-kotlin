@@ -36,13 +36,13 @@ class MovieAdapter (private var movielist: MutableList<Movie>):RecyclerView.Adap
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): MovieAdapter.MovieViewHolder {
-        TODO("Not yet implemented")
+    ): MovieViewHolder = MovieViewHolder (
+
         LayoutInflater.from(parent.context).inflate(R.layout.item_movie, parent, false)
-    }
+        )
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        TODO("Not yet implemented")
+
         holder.binding(movielist[position])
     }
 
